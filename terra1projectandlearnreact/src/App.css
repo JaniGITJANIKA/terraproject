@@ -182,3 +182,7 @@
     border-right-color: var(--border);
   }
 }
+.kep {
+  padding: 20px;
+  background-color: aqua;
+}
