@@ -1,7 +1,12 @@
+.background {
+  background-color: black;
+}
 .contener {
-  max-width: 480px;
+  max-width: 720px;
   margin: 0 auto;
   color: black;
+  background-color: black;
+
 }
 .head {
   display: flex;
@@ -12,10 +17,25 @@
   margin: 0;
   padding: 5px 3px 5px 3px;
   border-bottom: solid 3px navy;
-  background-color:white;
+  background-color: rgb(0, 0, 60);
+  z-index: 1;
 }
 .head img {
   height: 50px;
+}
+.head #menu {
+  transition: all 0.2s;
+}
+.head #icon {
+  transition: all 0.2s;
+}
+.head #menu:hover{
+  box-shadow: 0 0 10px skyblue;
+  border-radius: 100%;
+}
+.head #icon:hover{
+  box-shadow: 0 0 10px lightgreen;
+  border-radius: 100%;
 }
 .head h1 {
   margin: 0;
@@ -27,7 +47,6 @@
 }
 .prewiev {
   line-height: 1;
-  background: linear-gradient(45deg, lightgreen,lightblue);
   padding: 20px;
   border-radius: 20px;
   margin: 10px;
@@ -38,14 +57,127 @@
   max-width: 200px;
   margin-bottom: 20px;
 }
+.janiweblogo img{
+  transition: all 1s;
+}
+.janiweblogo img:hover {
+  transform: rotate(-65deg) scale(1.1) ;
+  box-shadow: 0 0 15px rgb(98, 98, 255);
+}
+.prewiev img
+
 .prewiev h1 {
   color: black;
 }
-.background {
-  background: linear-gradient(45deg, hsl(120, 20%, 75%),hsl(195, 20%, 79%));
+.menu h1 {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+}
+.menumenu {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.menucard {
+  height: 200px;
+  margin: 10px auto;
+  border-radius: 20px;
+  padding: 3px;
+  transition: all 0.2s;
+}
+.menucard img {
+  height: 65%;
+}
+.menucard p {
+  color: white;
+  font-weight: bold;
+  background-color: hsla(0, 0%, 20%, 0.8);
+  border-radius: 20px 20px 80px 80px;
+  padding: 5px;
+}
+.menucard:hover {
+  border-radius: 20%;
+}
+.meni {
+  width: 80%;
+  text-decoration: none;
+}
+.janiweblogo {
+    background: linear-gradient(45deg, lightgreen,lightblue);
+}
+.menumenu a video{
+  width: 80%;
+  border-radius: 20px;
+  margin: 10px 0 0 0;
+}
+.dow {
+  background-color: aqua;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+.dow:hover {
+  background-color: yellowgreen;
 }
 
 
-@media  (min-width: 480px) {
 
+@keyframes bottomtotop {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.bottomtotop {
+  animation: bottomtotop 0.4s ease-in-out;
+}
+@keyframes righttoleft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.righttoleft {
+  animation: righttoleft 0.4s ease-in-out;
+}
+.menumenu img {
+  border-radius: 20px;
+}
+.designated {
+  color: white;
+}
+.videok {
+  background: linear-gradient(45deg, white, AliceBlue);
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.nolinkdesing {
+  color: inherit;
+  text-decoration: none;
+}
+.videos iframe{
+  border-radius: 20px;
+  margin: 5px 10px;
+}
+
+@media  (min-width: 480px) {
+  .meni {
+    width: 45%;
+  }
+}
+@media (min-width: 720px) {
+  .meni {
+    width: 30%;
+  }
 }
