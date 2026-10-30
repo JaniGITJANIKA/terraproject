@@ -117,3 +117,4 @@ npm run build
 ```
 
 Az első parancs lefuttatja az ESLint ellenőrzést, a második elkészíti az éles buildet a `dist/` mappába.
+x
