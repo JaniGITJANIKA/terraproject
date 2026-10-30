@@ -117,4 +117,11 @@ npm run build
 ```
 
 Az első parancs lefuttatja az ESLint ellenőrzést, a második elkészíti az éles buildet a `dist/` mappába.
-x
+
+## Röviden
+Miután letöltötte a mappát csomagolja ki és ezután 
+a Terminálba írja be 
+cd terra1projectandlearnreact
+npm install
+npm run dev
+és ennyi és ha weboldalként szeretné futatni akkor a dist mappában indítsa el az index.html.
