@@ -1,11 +1,14 @@
-import { useState } from 'react'
 import iconimg from './assets/menuimg.png'
 import menuimg from './assets/menu.svg'
 import janiweblogo from './assets/janiweb.png'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 import './App.css'
+
+function publicAsset(path) {
+  return `${import.meta.env.BASE_URL}${path}`
+}
 
 function Head() {
   return (
@@ -54,9 +57,9 @@ function Menu() {
     <div className='righttoleft menu'>
       <h1>Ez itt a menü</h1>
       <div className='menumenu'>
-      <Link className='meni' to="/powerpoint" ><Menucard color1="red" color2='yellow' name="Powerpoint prezentációk" img="/presetation.svg"/></Link>
-      <Link className='meni' to="/weboldalak"><Menucard color1="lightblue" color2='blue' name="Weboldalak" img="/menu.svg" /></Link>
-      <Link className='meni' to="/youtube"><Menucard color1="red" color2='Maroon' name="Youtube csatornám" img="/youtube.svg"/></Link>
+      <Link className='meni' to="/powerpoint" ><Menucard color1="red" color2='yellow' name="Powerpoint prezentációk" img={publicAsset('presetation.svg')} /></Link>
+      <Link className='meni' to="/weboldalak"><Menucard color1="lightblue" color2='blue' name="Weboldalak" img={publicAsset('menu.svg')} /></Link>
+      <Link className='meni' to="/youtube"><Menucard color1="red" color2='Maroon' name="Youtube csatornám" img={publicAsset('youtube.svg')}/></Link>
       <a href='https://janiweb.eu' target='_blank' className='meni' ><Menucard color1="green" color2='navy' name="A régi Janiweb.eu" img="https://janiweb.eu/Janiweb%20logo.png" /></a>
     </div>
     </div>
@@ -75,7 +78,7 @@ function Download({download,video,text}) {
 function Youtube() {
   return (
     <div>
-    <a className='nolinkdesing' href="https://www.youtube.com/@jjaniwweb" target='_blank'><Prewiev name="Youtube(csatorna)" image="/youtube.svg" text="Itt van a youtube csatornám és egy pár videóm." color1="brown" color2="maroon" /></a>
+    <a className='nolinkdesing' href="https://www.youtube.com/@jjaniwweb" target='_blank'><Prewiev name="Youtube(csatorna)" image={publicAsset('youtube.svg')} text="Itt van a youtube csatornám és egy pár videóm." color1="brown" color2="maroon" /></a>
     <h1 className='designated'>Kiemelt videók.</h1>
     <div className='videok'>
       <h2>Shorts</h2>
@@ -94,15 +97,15 @@ function Youtube() {
 function Powerpoint() {
   return (
   <div className='bottomtotop'>
-    <Prewiev name="PowerPoint" image="/presetation.svg" text="Itt vannak a Powerpoint prezentációim és innen le lehet tölteni egy katintással." color1="red" color2="yellow" />
-    <Download download="/A naprendszer és az űrteleszkópok(Jani).pptx" video="p1.mp4" text="Ez egy naprendszeres és ürteleszkópos kvíz." />
+    <Prewiev name="PowerPoint" image={publicAsset('presetation.svg')} text="Itt vannak a Powerpoint prezentációim és innen le lehet tölteni egy katintással." color1="red" color2="yellow" />
+    <Download download={publicAsset('A naprendszer és az űrteleszkópok(Jani).pptx')} video={publicAsset('p1.mp4')} text="Ez egy naprendszeres és ürteleszkópos kvíz." />
   </div>
   )
 }
 function Weboldalak() {
   return (
     <div className='bottomtotop'>
-      <Prewiev name="Weboldalaim" image="/weboldalak.svg" text="Itt vannak a egyelőre a régi weboldalaim de hamarosan érkeznek újak is most ezek a weboldalak a régi Janiwebről vannak." color1="lightblue" color2="blue" />
+      <Prewiev name="Weboldalaim" image={publicAsset('weboldalak.svg')} text="Itt vannak a egyelőre a régi weboldalaim de hamarosan érkeznek újak is most ezek a weboldalak a régi Janiwebről vannak." color1="lightblue" color2="blue" />
       <div className='menumenu' >
       <a href='https://janiweb.eu/weboldalak/irregular_verbs/irregularverbs.html' target='_blank' className='meni' ><Menucard color1="blue" color2='darkblue' name="Irregular Verbs" img="https://janiweb.eu//thumbnail/irregular_verbsicon.png" /></a>
       <a href='https://janiweb.eu/weboldalak/vezuv/vezuv.html' target='_blank' className='meni' ><Menucard color1="brown" color2='gray' name="A Vezúv a vulkán" img="https://janiweb.eu/thumbnail/1736918427307.jpg" /></a>
@@ -114,7 +117,7 @@ function Weboldalak() {
 
 export default function website() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <div className='background'>
     <Head />
     <div className='contener'>
@@ -129,7 +132,7 @@ export default function website() {
 
     </div>
     </div>
-    </BrowserRouter>
+    </HashRouter>
     
   )
 }
